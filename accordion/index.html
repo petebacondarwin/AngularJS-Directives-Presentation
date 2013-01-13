@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="accordion">
+<head>
+  <meta charset="utf-8">
+  <title>Accordion Demo</title>
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <script src="http://code.angularjs.org/1.1.1/angular.js"></script>
+  <script src="accordion.js"></script>
+  <script src="lib/transition.js"></script>
+  <script src="lib/collapse.js"></script>
+  <script src="app.js"></script>
+  <script src="template/accordion/accordion.html.js"></script>
+  <script src="template/accordion/accordion-group.html.js"></script>
+</head>
+<body>
+<div ng-controller="AccordionDemoCtrl" class="well">
+  <label class="checkbox">
+    <input type="checkbox" ng-model="oneAtATime">
+    Open one at a time
+  </label>
+  
+  <accordion close-others="oneAtATime">
+    <accordion-group title="'Static Header'">
+      This content is straight in the template.
+    </accordion-group>
+    <accordion-group title="group.title" ng-repeat="group in groups">
+      {{group.content}}
+    </accordion-group>
+    <button ng-click="addItem()">Add Item</button>
+    <accordion-group title="'Dynamic Body Content'">
+      <p>The body of the accordion group grows to fit the contents.</p>
+      <div ng-repeat="item in items">{{item}}</div>
+    </accordion-group>
+  </accordion>
+</div>
+</body>
+</html>

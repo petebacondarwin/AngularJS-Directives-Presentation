@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <link href='style.css' rel='stylesheet'/>
+    <script src="lib/swipe.js"></script>
+    <script src="http://code.angularjs.org/1.1.1/angular.js"></script>
+    <script src="swiper.js"></script>
+    <script src="app.js"></script>
+  </head>
+  
+  <body ng-app="app" ng-controller="AppController">
+    <div swiper auto="500" speed="1000" start-slide="1" on-slide-end="logSlide(index, slide)" style='width:200px'>
+      <ul>
+        <li><div>Item 1</div></li>
+        <li><div>Item 2</div></li>
+        <li><div>Item 3</div></li>
+        <li><div>Item 4</div></li>
+      </ul>
+      <button ng-click="swiper.prev()">Previous</button>
+      Index: {{swiper.getPos()}}
+      <button ng-click="swiper.next()">Next</button>
+      <button ng-click="swiper.resume()">Start</button>
+      <button ng-click="swiper.stop()">Stop</button>
+    </div>
+  </body>
+
+</html>

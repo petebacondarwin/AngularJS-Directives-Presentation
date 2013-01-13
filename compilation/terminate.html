@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="compilation">
+<head>
+  <meta charset="utf-8">
+  <title>Compilation Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="http://code.angularjs.org/1.1.1/angular.js"></script>
+  <script src="compilation.js"></script>
+</head>
+<body>
+<div log-compile="parent">
+  <div log-compile="..child 1">
+    <div log-compile="....child 1 a"></div>
+    <div log-compile="....child 1 b"></div>
+  </div>
+  <div log-compile="..child 2" terminate>
+    <div log-compile="....child 2 a"></div>
+    <div log-compile="....child 2 b"></div>
+  </div>
+  <div log-compile="..child 3">
+    <div log-compile="....child 3 a"></div>
+    <div log-compile="....child 3 b"></div>
+  </div>
+</div>
+
+<!-- LOG -->
+<pre>{{log}}</pre>
+</body>
+</html>
