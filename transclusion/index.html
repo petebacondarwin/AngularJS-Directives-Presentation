@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="transclusion-app">
+  
+  <head lang="en">
+    <meta charset="utf-8">
+    <script src="http://code.angularjs.org/1.1.1/angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+  
+<body>
+  <div transclude><div>Some content to transclude</div></div>
+  
+  <ul ng-controller="AppController">
+    <li ng-repeat="message in logger.messages">
+      <h2>{{message.context}}:</h2>
+      {{message.message}}
+    </li>
+  </ul>
+</body>
+
+</html>
