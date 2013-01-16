@@ -1,0 +1,15 @@
+body {
+  color: #fff;
+  background: #00406c;
+  padding: 60px 10px 20px 20px;
+}
+.square {
+  width: 180px;
+  height: 160px;
+  float: left;
+  margin: 10px;
+  padding: 10px 20px;
+  color: #000;
+  background: #fff;
+  font-family: Helvetica, Arial, Sans-Serif;
+}
